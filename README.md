@@ -5,7 +5,7 @@
 
 🌐 **Live App**: [https://woraphon.shinyapps.io/TARA/](https://woraphon.shinyapps.io/TARA/)  
 📁 **Source Code**: [https://github.com/woraphonyamaka/CMUTARA](https://github.com/woraphonyamaka/CMUTARA)
-📁 **User guide**: [https://wyamaka.wordpress.com/wp-content/uploads/2025/07/user-guide-cmu-tara.pdf]
+📁 **User guide**: [https://wyamaka.wordpress.com/wp-content/uploads/2025/07/user-guide-cmu-tara.pdf](https://wyamaka.wordpress.com/wp-content/uploads/2025/07/user-guide-cmu-tara.pdf)
 
 ---
 
