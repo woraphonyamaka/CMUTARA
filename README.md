@@ -56,9 +56,16 @@ shiny::runApp("CMUTARA8 remove key.R")
 
 ```
 CMUTARA/
-├── CMUTARA8 remove key.R   # Main Shiny application file
-├── README.md               # This file
-```
+├── CMUTARA8 remove key.R # Main Shiny application with key removed
+├── README.md # This file
+├── User guide # (Consider renaming to include file extension, e.g., User_guide.pdf)
+├── explain_stat.r # Script for statistical explanation
+├── explain_theory.r # Script for theoretical explanation
+├── interpret_result.r # Script for interpreting model output
+├── interpret_result_stat.r # Script for statistical interpretation of results
+├── main.r # Main logic (possibly wrapper or launcher)
+├── server.r # Shiny server logic
+├── ui.R # Shiny UI layout
 
 ---
 
