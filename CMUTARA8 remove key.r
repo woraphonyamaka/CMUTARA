@@ -1,3 +1,5 @@
+
+# required function 
 library(shiny)
 library(httr)
 library(stringr)
@@ -34,10 +36,18 @@ library("rugarch")
 library(aTSA)
 library(oglmx)
 
-# required function 
+# ChatGPT API Key Configuration
+# To enable ChatGPT features, you must register at OpenAI and obtain your own API key.
+# Once you have the key, set it in your R environment using the line below:
+
 Sys.setenv(OPENAI_API_KEY = "your own key")
 api_key="your own key"
 style1 <- "border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; background-color: #f9f9f9;"
+
+# -------------------------------------------------------------------
+# Results Interpretation and Theoretical Explanation in Domain Layer
+# -------------------------------------------------------------------
+
 interpret_result <- function(estimation_result) {
   
   
@@ -131,6 +141,27 @@ Explain_theory <- function(estimation_result) {
   return(explain_latex)
 }
 
+# -----------------------------------------------------------------------------------------------------------------
+# ============================================================================
+# CMU-TARA User Interface Layer
+# ============================================================================
+
+
+# Key Features of the Interface:
+# - Dashboard layout using shinydashboard
+# - Sidebar navigation with modules for:
+#   • Model suggestion
+#   • Descriptive and inferential statistics
+#   • Time series and panel econometric models
+#   • Visualization (Histogram, Boxplot, Scatter Plot)
+# - Upload support for CSV/xlsx files
+# - ChatGPT API integration for model explanation and theoretical interpretation
+# - Dynamic UI panels for hypothesis testing (t-test, ANOVA, chi-square, etc.)
+# - Live rendering of LaTeX-based math explanations using MathJax
+# - Integrated chat history and interactive response area
+# - Custom branding with institutional logos and light theme styling
+#
+========================================================================
 ui <- dashboardPage(
   dashboardHeader(title = "CMU-TARA"),
   
@@ -570,6 +601,27 @@ ui <- dashboardPage(
     )
   )
 )
+
+#=========================================================================================================================
+# SERVER
+# - 📁 Data Layer: 
+#     • Manages file upload (CSV/XLSX), input parsing, reactive data loading.
+# - 📊 Model Layer:
+#     • Handles user selections and estimation logic for:
+#         - Basic statistics & hypothesis tests
+#         - Regression (Linear, Binary, Panel, Multinomial, Ordinal)
+#         - Time series models (ARIMA, GARCH, VAR, VECM, ECM)
+#         - Unit root tests (ADF, Panel)
+#     • Uses `eventReactive()` to compute and return model summaries.
+# - 📈 Output Layer:
+#     • Renders results to UI: model outputs, interpretations, plots.
+#     • Includes dynamic `renderUI()`, `renderPrint()`, and `renderPlotly()` blocks.
+#     • Integrates MathJax for rendering LaTeX math.
+#     • Uses `ask_chatgpt()` to interpret model output and provide theoretical context.
+#     • Offers statistical/econometric explanation and LaTeX math rendering.
+#     • Enables two-way chat interface with GPT, logs user interactions, 
+#       and handles message updates with scroll sync.
+#     • Provides plot options for histogram, boxplot, scatter, and model-based time series forecasting.
 
 server <- function(input, output, session) {
   
@@ -2113,6 +2165,8 @@ server <- function(input, output, session) {
   
 }
 
+#===========================================================================================================
+# Launch the Shiny App
 shinyApp(ui, server)
 
 
