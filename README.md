@@ -95,7 +95,7 @@ CMU TARA is designed to be modular and easy to extend:
 
 If you use CMU TARA in your work, please cite the following paper:
 
-> Woraphon Yamaka, Paravee Maneejuk (2025). **CMU TARA: An AI-enhanced Teaching and Research Assistant for Applied Econometrics**. *SoftwareX*. [DOI pending]
+> Woraphon Yamaka, et al. (2025). **CMU TARA: An AI-enhanced Teaching and Research Assistant for Applied Econometrics**. *SoftwareX*. [DOI pending]
 
 ---
 
@@ -109,4 +109,4 @@ For questions or contributions:
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0)
