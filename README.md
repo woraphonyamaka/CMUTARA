@@ -1,112 +1,62 @@
+# ✅ CMUTARA: Chiang Mai University Teaching and Research Assistant for Econometrics and Statistics
 
-# CMU TARA
+**CMUTARA** is a **web-based application** developed using R Shiny and integrated with ChatGPT. It is designed to support teaching and research in **econometrics and statistics** by offering model selection, estimation, AI-generated interpretation, and theoretical explanations.
 
-**CMU TARA** (Teaching and Research Assistant) is an advanced AI-powered web-based Shiny application developed by Chiang Mai University. It supports teaching and research in statistics and econometrics by combining powerful statistical tools with GPT-assisted explanations and model suggestions.
-
-🌐 **Live App**: [https://woraphon.shinyapps.io/TARA/](https://woraphon.shinyapps.io/TARA/)  
-📁 **Source Code**: [https://github.com/woraphonyamaka/CMUTARA](https://github.com/woraphonyamaka/CMUTARA)
-📁 **User guide**: [https://wyamaka.wordpress.com/wp-content/uploads/2025/07/user-guide-cmu-tara.pdf](https://wyamaka.wordpress.com/wp-content/uploads/2025/07/user-guide-cmu-tara.pdf)
+> 🟢 **No installation required. Just open your browser and start using the tool.**
 
 ---
 
-## ✨ Key Features
+## 🌐 How to Use CMUTARA
 
-- 📊 Descriptive statistics, hypothesis testing (t-test, ANOVA, Chi-square, F-test)
-- 📈 Time series and panel econometric models: ARIMA, ECM, VAR, VECM, GARCH, Unit Root Tests
-- 🧠 AI-powered interpretation using OpenAI GPT (ChatGPT)
-- 🔍 Suggests appropriate models based on user study info
-- 📉 Visualizations: histogram, boxplot, scatter plot (with `plotly`)
-- 🧪 Multinomial/ordinal/binary regressions with marginal effects
-- 📚 Real-time teaching support via explainable output and statistical theory prompts
+You can use CMUTARA directly from any modern web browser.
 
----
+### ✅ Steps:
+1. Open one of these browsers:
+   - **Google Chrome**
+   - **Mozilla Firefox**
+   - **Microsoft Edge**
+   - **Safari**
 
-## 📦 Installation
+2. Go to the application:
+   👉 [https://woraphon.shinyapps.io/CMUTARA/](https://woraphon.shinyapps.io/CMUTARA/)
 
-1. **Clone this repository**
-```bash
-git clone https://github.com/woraphonyamaka/CMUTARA.git
-cd CMUTARA
-```
+3. Upload your `.csv` dataset.
 
-2. **Install dependencies in R**
-```r
-install.packages(c(
-  "shiny", "shinydashboard", "shinyWidgets", "shinyjs", "httr", "stringr",
-  "ggplot2", "plotly", "bslib", "readr", "readxl", "pastecs", "e1071", 
-  "tseries", "dplyr", "aTSA", "plm", "urca", "tsDyn", "nnet", "mlogit", 
-  "stargazer", "marginaleffects", "MASS", "datasets", "vars", "mfx", 
-  "dynlm", "rugarch", "oglmx"
-))
-```
+4. Select your dependent and independent variables.
 
-3. **Set your OpenAI API Key**
-```r
-Sys.setenv(OPENAI_API_KEY = "your-key-here")
-```
-
-4. **Run the app**
-```r
-shiny::runApp("CMUTARA8 remove key.R")
-```
+5. Explore the features:
+   - 📊 Model suggestions based on data characteristics
+   - 🧮 Regression estimation (OLS, Logit, Probit, Poisson, etc.)
+   - 💬 AI-generated interpretation of model results
+   - 📚 Theoretical and statistical explanations
+   - 📁 Exportable reports in various formats
 
 ---
 
-## 🧱 File Structure
+## 📦 Source Code
 
-```
-CMUTARA/
-├── CMUTARA8 remove key.R # Main Shiny application with key removed
-├── README.md # This file
-├── User guide # (Consider renaming to include file extension, e.g., User_guide.pdf)
-├── explain_stat.r # Script for statistical explanation
-├── explain_theory.r # Script for theoretical explanation
-├── interpret_result.r # Script for interpreting model output
-├── interpret_result_stat.r # Script for statistical interpretation of results
-├── main.r # Main logic (possibly wrapper or launcher)
-├── server.r # Shiny server logic
-├── ui.R # Shiny UI layout
+The complete source code is available at:  
+🔗 [https://github.com/woraphonyamaka/CMUTARA](https://github.com/woraphonyamaka/CMUTARA)
 
 ---
 
-## 🔄 Extendability
+## 🛠️ For Developers: Optional Local Installation
 
-CMU TARA is designed to be modular and easy to extend:
+This section is for developers who want to run CMUTARA locally for customization or offline testing.
 
-### ➕ Add a New Statistical or Econometric Model
-1. Add a new `menuSubItem()` and `tabItem()` under `dashboardSidebar` and `dashboardBody`.
-2. Define the logic for the model under `renderUI()` and `eventReactive()`.
-3. Render the output using `renderPrint()` or `renderPlotly()`.
+### ✅ Supported Operating Systems:
+- Linux ✅
+- Windows ✅
+- macOS ✅
 
-### 🤖 Customize AI-Generated Explanations
-- Modify prompt templates in the functions:  
-  - `interpret_result()`  
-  - `Explain_stat()`  
-  - `Explain_theory()`  
-- These use the `ask_chatgpt()` function which sends output to OpenAI’s GPT model for interpretation or explanation.
+### 🔧 Prerequisites:
+- R (version ≥ 4.2.0)
+- RStudio (optional)
+- Internet access for OpenAI API features
 
-### 🖼 Add New Visualizations
-- Edit the section under `output$plot_output` in `server`.
-- Add your own plot type in the `radioButtons("plot_type", ...)`.
+### 📥 Installation Steps
 
----
-
-## 📚 Citation
-
-If you use CMU TARA in your work, please cite the following paper:
-
-> Woraphon Yamaka, et al. (2025). **CMU TARA: An AI-enhanced Teaching and Research Assistant for Applied Econometrics**. *SoftwareX*. [DOI pending]
-
----
-
-## 📬 Contact
-
-For questions or contributions:
-- 📧 Woraphon Yamaka – [woraphon.econ@gmail.com](mailto:woraphon.econ@gmail.com)
-- 📍 Faculty of Economics, Chiang Mai University
-
----
-
-## 📝 License
-
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/woraphonyamaka/CMUTARA.git
+   cd CMUTARA
