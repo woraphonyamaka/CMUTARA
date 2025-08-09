@@ -56,15 +56,13 @@ This section is for developers who want to run CMUTARA locally for customization
 
 ### 📥 Installation Steps
 
-# === CMUTARA Local Installation & Run (Linux/macOS/Windows with R installed) ===
-
-# 1) Clone the repository
+**1) Clone the repository**
+```bash
 git clone https://github.com/woraphonyamaka/CMUTARA.git
 cd CMUTARA
-
-# 2) Start R (Linux/macOS: type 'R' in terminal; Windows: open R or RStudio)
-# Then copy and paste everything below into the R console:
-
+```
+**2) Install required R packages:**
+```r
 install.packages(c(
   "shiny","shinydashboard","shinyWidgets","shinyjs","bslib",
   "plotly","ggplot2","readr","readxl","dplyr","stringr","httr",
@@ -73,15 +71,19 @@ install.packages(c(
   "stargazer","marginaleffects","mfx","lmtest","mctest","forecast",
   "mathjaxr","chatgpt"
 ))
+```
 
-# 3) Set your OpenAI API key (required for ChatGPT features)
-#    You can get your API key by signing in to your OpenAI account here:
-#    https://platform.openai.com/account/api-keys
+**3) Set your OpenAI API key (required for ChatGPT features)**
+
+You can get your API key by signing in to your OpenAI account here:
+https://platform.openai.com/account/api-keys
+```r
 Sys.setenv(OPENAI_API_KEY = "YOUR_OPENAI_API_KEY")
 
 # (Optional) Save the key for future sessions
 # write("OPENAI_API_KEY=YOUR_OPENAI_API_KEY", file = file.path(Sys.getenv("HOME"), ".Renviron"), append = TRUE)
-
-# 4) Run the Shiny application
+```
+**4) Run the Shiny application:**
+```r
 shiny::runApp("CMUTARA8 remove key.R")
-
+```
